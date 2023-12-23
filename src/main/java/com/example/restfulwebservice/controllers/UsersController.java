@@ -68,7 +68,7 @@ public class UsersController {
 	}
 
 	@PostMapping ("/users/{id}/posts")
-	public List<Posts> addPost(@PathVariable int id, @Valid @RequestBody Posts post){
+	public Posts addPost(@PathVariable int id, @Valid @RequestBody Posts post){
 
 		Users user;
 		try {
@@ -78,7 +78,7 @@ public class UsersController {
 		}
 		post.setUser(user);
 		Posts savedPost = postsDao.save(post);
-		return user.getPosts();
+		return savedPost;
 	}
 	
 	@DeleteMapping("/users/{id}")

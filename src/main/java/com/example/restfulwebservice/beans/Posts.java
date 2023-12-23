@@ -53,11 +53,13 @@ public class Posts {
         this.description = description;
     }
 
+
     @Override
     public String toString() {
         return "Posts{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
+                ", user=" + user +
                 '}';
     }
 }
